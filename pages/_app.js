@@ -8,20 +8,38 @@ import { Nav } from '../app/components'
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
+
+    const navProps = {      
+      logo: "/static/images/logo.png",
+      brandName: "Zedlen",
+      leftItems: [{
+        route:"#about",
+        text:"Acerca de mi"
+      }],
+      rigthItems: [{
+        route:"/index#2",
+        text:"Item 2",
+      },{
+        route:"/index#3",
+        text:"Item 3",
+        button: true,
+        onclick:()=>alert(1)
+      }], 
+      navProps: {}
+    };
     return (
-      <>
-        <Head>
-          <title>Zedlen</title>                      
-        </Head>
+      <>        
+        <title>Zedlen</title>     
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />                                 
         <ThemeProvider theme={theme}>
         <style jsx global>{`            
-            body, ul {
+            body {
               margin: 0;
               padding: 0;
               font-family: ${theme.fonts}
             }`}
           </style>  
-          <Nav />
+          <Nav {...navProps} />
           <Component {...pageProps} />
         </ThemeProvider>
       </>      

@@ -6,9 +6,7 @@ export const SNav = styled.nav`
     outline: none;
     display: flex;
     flex-direction: row;
-    background: ${ ({ theme, backgroundColor }) => backgroundColor ? backgroundColor : theme.colors.navBackground };
-    position: fixed;
-    top: 0;
+    background: ${ ({ theme, backgroundColor }) => backgroundColor ? backgroundColor : theme.colors.primary };    
     height: 40px;
     width: 100%;
 `;
@@ -34,9 +32,9 @@ export const SLinkLogoHolder = styled.a`
 
 export const SBrandName = styled.p`        
    margin: auto;
-   heigth: 100%;
-   color: ${ ({ theme, textColor }) => textColor ? textColor : theme.colors.brandTextColor };
-   line-heigth:40px;
+   height: 100%;
+   color: ${ ({ theme, textColor }) => textColor ? textColor : theme.colors.primaryContrast };
+   line-height:40px;
    padding: 0 15px;
 `;
 
@@ -44,11 +42,12 @@ export const NavMenu = styled.div`
     display: flex; 
     flex: 1;
     position: relative;    
+    z-index: 99;
     @media ${breakpoints.mobileS} {
         padding-top: 40px;          
         flex-direction: column;  
         div:last-child{
-            border-bottom-rigth-radius: 5px;         
+            border-bottom-right-radius: 5px;         
             border-bottom-left-radius: 5px;         
             padding-bottom: ${({show})=>show?"20px":""};
         }
@@ -78,11 +77,11 @@ export const NavItemsHolder = styled.div`
         }
         .responsive.show{            
             width:100%;
-            background:${ ({ theme, backgroundColor }) => backgroundColor ? backgroundColor : theme.colors.navBackground };                        
+            background:${ ({ theme, backgroundColor }) => backgroundColor ? backgroundColor : theme.colors.primary };                        
         }                
         display:flex; 
         flex-direction: column;  
-        background:${ ({ theme, backgroundColor }) => backgroundColor ? backgroundColor : theme.colors.navBackground };                                            
+        background:${ ({ theme, backgroundColor }) => backgroundColor ? backgroundColor : theme.colors.primary };                                            
     }
     @media ${breakpoints.tablet} {
         .icon{
@@ -115,15 +114,15 @@ export const MenuIcon = styled.div`
     mix-blend-mode: multiply;
     cursor: pointer;
     &:before,:after{
-        border-color: #fff;
-        color: #fff;
+        border-color: ${({ theme }) => theme.colors.primaryContrast};
+        color: ${({ theme }) => theme.colors.primaryContrast};
         content: '';
         position: absolute;
         display: block;
         box-sizing: border-box;
     }
     &:before{ 
-        border-color: #000;
+        border-color: ${({ theme }) => theme.colors.primaryContrast};
         height: 0.75em;
         width: 1em;
         border-width: 0.125em 0;
@@ -134,7 +133,7 @@ export const MenuIcon = styled.div`
         border-radius:2px;
     }
     &:after{ 
-        border-color: #000;
+        border-color: ${({ theme }) => theme.colors.primaryContrast};
         height: 0px;
         width: 1em;
         background: transparent;
@@ -162,19 +161,19 @@ export const NavItemHolder = styled.div`
     flex-direction: row;
     height: 40px;    
     padding: 0 5px;
-    background-color:${({ theme, button })=>button?theme.colors.navButtonColor:''} !important;
-    border-radius:${({ button })=>button?'5px':'10px'};
+    background-color:${({ theme, button })=>button?theme.colors.strongPrimary:''} !important;
+    border-radius:${({ button })=>button?'5px':'10px !important'};
     cursor:${({  button })=>button?'pointer':''};
 
     &:hover{
-        background-color: ${({  hoverColor, theme })=>hoverColor?hoverColor:theme.colors.navItemHover} !important;
+        background-color: ${({  hoverColor, theme })=>hoverColor?hoverColor:theme.colors.lightPrimary} !important;
     }
 `;
 
 export const NavItemText = styled.p`    
     margin: auto;
-    heigth: 100%;
-    color: ${ ({ theme, textColor }) => textColor ? textColor : theme.colors.brandTextColor };
-    line-heigth:40px;
+    height: 100%;
+    color: ${ ({ theme, textColor }) => textColor ? textColor : theme.colors.primaryContrast };
+    line-height:40px;
     padding: 0 15px;    
 `;

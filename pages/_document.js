@@ -24,7 +24,8 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {/* Step 5: Output the styles in the head  */}
-          {this.props.styleTags}                    
+          {this.props.styleTags}          
+          <link rel="icon" type="image/png" href="/static/images/logo.png" />          
         </Head>
         <body >
           <Main />

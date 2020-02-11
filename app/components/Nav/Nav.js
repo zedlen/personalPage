@@ -30,21 +30,10 @@ const Nav = props => {
 export default Nav
 
 Nav.defaultProps = {
-  leftItems: [{
-    route:"/index",
-    text:"Item 1"
-  }],
-  logo: "https://cdn.worldvectorlogo.com/logos/figma-1.svg",
-  brandName: "Brand",
-  rigthItems: [{
-    route:"/index#2",
-    text:"Item 2",
-  },{
-    route:"/index#3",
-    text:"Item 3",
-    button: true,
-    onclick:()=>alert(1)
-  }], 
+  leftItems: [],
+  logo: "",
+  brandName: "Zedlen",
+  rigthItems: [], 
   navProps: {}
 };
 
