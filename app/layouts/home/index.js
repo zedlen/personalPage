@@ -9,15 +9,34 @@ import {
     AboutTitle,
     Section
 } from './style';
-import { fetcher, github_fetcher } from '../../app/helpers';
+import { fetcher, github_fetcher } from '../../helpers';
 import useSWR from 'swr'
 import Repo from './repo';
-import { ABOUT } from '../../app/constants/sections';
+import { ABOUT } from '../../constants/sections';
 
 const Home = () => {
-    const { data, error } = useSWR('/users/zedlen/repos', github_fetcher)    
-    if (error) return <div>failed to load</div>
-    if (!data) return <div>loading...</div>
+    const { data, error } = useSWR('/users/zedlen/repos', github_fetcher) 
+    let repos = <></>   
+    if (error) {
+        repos = <div>failed to load</div>
+    }
+    else {
+        if (!data) {
+            repos = <div>loading...</div>
+        } 
+        else {
+            repos = 
+                (<Section bg='rgba(125,125,125,0.1)' id={'projects'}>
+                    <ReposHolder> 
+                        {data.map(repo=>{
+                            if (repo.size && repo.description) {
+                                return (<Repo key={repo.id} {...repo} />)
+                            }
+                        })}          
+                    </ReposHolder>
+                </Section>)
+        }
+    }
     return(
         <div>
             <BannerHolder /> 
@@ -35,16 +54,8 @@ const Home = () => {
                         </AboutTextHolder>
                     </AboutItem> 
                 )}
-            </Section> 
-            <Section bg='rgba(125,125,125,0.1)' id={'projects'}>
-                <ReposHolder> 
-                    {data.map(repo=>{
-                        if (repo.size) {
-                            return (<Repo key={repo.id} {...repo} />)
-                        }
-                    })}          
-                </ReposHolder>               
-            </Section>                    
+            </Section>
+            { repos }                                     
         </div>
     )
 }
