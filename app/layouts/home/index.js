@@ -7,7 +7,8 @@ import {
     AboutTextHolder,
     AboutText, 
     AboutTitle,
-    Section
+    Section,
+    SectionTitle
 } from './style';
 import { fetcher, github_fetcher } from '../../helpers';
 import useSWR from 'swr'
@@ -26,7 +27,7 @@ const Home = () => {
         } 
         else {
             repos = 
-                (<Section bg='rgba(125,125,125,0.1)' id={'projects'}>
+                (   
                     <ReposHolder> 
                         {data.map(repo=>{
                             if (repo.size && repo.description) {
@@ -34,13 +35,14 @@ const Home = () => {
                             }
                         })}          
                     </ReposHolder>
-                </Section>)
+                )
         }
     }
     return(
         <div>
             <BannerHolder /> 
             <Section id={ABOUT.id}>
+                <SectionTitle>Sobre mi</SectionTitle>
                 {ABOUT.info.map( ( item, index ) => 
                     <AboutItem key={'about'+index} position={index % 2 == 0 ? 'left' : 'rigth' }>
                         <AboutImage image={item.image}/>                
@@ -55,7 +57,10 @@ const Home = () => {
                     </AboutItem> 
                 )}
             </Section>
-            { repos }                                     
+            <Section bg='rgba(125,125,125,0.1)' id={'projects'}>
+                <SectionTitle>Mis proyectos (desde GitHub)</SectionTitle>
+                { repos }                                     
+            </Section>
         </div>
     )
 }

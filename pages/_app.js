@@ -15,8 +15,11 @@ export default class MyApp extends App {
       leftItems: [{
         route:"#about",
         text:"Acerca de mi"
+      },{
+        route:"#projects",
+        text:"Mis proyectos"
       }],
-      rigthItems: [{
+      rigthItems: [/*{
         route:"/index#2",
         text:"Item 2",
       },{
@@ -24,7 +27,7 @@ export default class MyApp extends App {
         text:"Item 3",
         button: true,
         onclick:()=>alert(1)
-      }], 
+      }*/], 
       navProps: {}
     };
     return (
