@@ -9,6 +9,8 @@ export const SNav = styled.nav`
     background: ${ ({ theme, backgroundColor }) => backgroundColor ? backgroundColor : theme.colors.primary };    
     height: 40px;
     width: 100%;
+    position: sticky;
+    top: 0;
 `;
 
 export const SNavLogo = styled.img`    

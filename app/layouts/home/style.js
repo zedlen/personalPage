@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from '../../breakpoints'
 
 export const BannerHolder = styled.div`
     width: 100%;
@@ -13,25 +14,37 @@ export const ReposHolder = styled.div`
     width: 100%;        
     flex-direction: row;    
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
 `;
 
-export const RepoHolder = styled.div`
-    display: table-cell;
-    grid-column: span 4;
-    padding: 10px;
-    position:relative;
-    padding: 15px;
-    border: 1px solid ${({theme})=>theme.colors.lightPrimary};
+export const RepoHolder = styled.div`       
+    position: relative;
+    padding: 15px;    
     margin: 15px;
-    border-radius:5px;
+    border-radius: 5px;
     background: #fafafa;
     box-shadow: 4px 4px  15px rgba(0,0,0,0.25);
+    @media (min-width: 0px) {
+        width: 85%; 
+    }
+    @media ${breakpoints.tablet} {
+        width: 42%; 
+    }
+    @media ${breakpoints.laptop} {
+        width: 27%; 
+    }
+    transition: all 200ms;
+    &:hover{
+        transform: scale(1.1);
+    }
 `;
 
-export const RepoTitle = styled.h3`
+export const RepoTitle = styled.span`
     color:${({theme})=>theme.colors.strongPrimary};
+    font-size: 1.2rem;
+    text-transform: uppercase;
 `;
 
 export const RepoDescription = styled.p`
@@ -64,7 +77,7 @@ export const AboutTextHolder = styled.div`
     margin: 0;
 `;
 
-export const AboutTitle = styled.h1`
+export const AboutTitle = styled.h2`
     text-align: center;
     padding: 2px 10px;
     color: ${({ theme }) => theme.colors.primaryContrast };
@@ -79,4 +92,8 @@ export const AboutText = styled.p`
 export const Section = styled.div`
     padding: 5em 1em;
     background-color: ${({ bg }) => bg ? bg : '#fff' };
+`;
+
+export const SectionTitle = styled.h1`
+    text-align: center;
 `;
