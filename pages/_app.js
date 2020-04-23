@@ -18,16 +18,21 @@ export default class MyApp extends App {
       },{
         route:"#projects",
         text:"Mis proyectos"
+      },{
+        route:"#techs",
+        text:"Conocimientos"
       }],
       rigthItems: [/*{
         route:"/index#2",
         text:"Item 2",
-      },{
-        route:"/index#3",
-        text:"Item 3",
+      },*/{
+        route:"#contact",
+        text:"Contactame",
         button: true,
-        onclick:()=>alert(1)
-      }*/], 
+        onclick:()=>{          
+          document.getElementById("contact").scrollIntoView({ behavior: 'smooth', block: 'end'});
+        }
+      }], 
       navProps: {}
     };
     return (
@@ -39,7 +44,7 @@ export default class MyApp extends App {
             body {
               margin: 0;
               padding: 0;
-              font-family: ${theme.fonts}
+              font-family: ${theme.fonts};
             }`}
           </style>  
           <Nav {...navProps} />

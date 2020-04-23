@@ -16,6 +16,14 @@ const NavItem = props => {
             <NavItemText>{props.text}</NavItemText>
         </NavItemHolder>) 
     }*/
+    if (props.route.includes('#') && props.route.split('').indexOf('#') === 0) {
+        const onclik = () => { document.getElementById(props.route.replace('#','')).scrollIntoView({ behavior: 'smooth'});}
+        return(            
+            <NavItemHolder {...props} onClick={onclik}>
+                <NavItemText>{props.text}</NavItemText>
+            </NavItemHolder>            
+        )
+    }
     return(
     <Link href={props.route}>
         <SLinkItemHolder>
