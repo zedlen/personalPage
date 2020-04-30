@@ -109,7 +109,7 @@ export const TECHS = {
             name: 'Vercel',
             url: 'https://vercel.com/',
             background: 'dark',
-            image: 'https://blogwp.geek.co.jp/wp/wp-content/uploads/2019/09/now.png'
+            image: 'https://ml.globenewswire.com/Resource/Download/3a54c241-a668-4c94-9747-3d3da9da3bf2?size=2'
         },
     ]
 }
