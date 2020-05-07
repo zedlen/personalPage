@@ -84,7 +84,7 @@ const Home = () => {
             </Section>
             <Section bg='rgba(125,125,125,0.2)' id={'contact'}>
                 <ContactHolder>
-                    <div style={{flex:1}}>info</div>
+                    <div style={{flex:1}}>{process.env.BLOG_ID}</div>
                     <div style={{flex:1}}>formulario</div>
                 </ContactHolder>   
             </Section>
