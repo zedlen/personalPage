@@ -19,14 +19,13 @@ jobs:
       - run: yarn install
       
       - name: Build
-        run: yarn build
-        with:
-          BLOGGER_API_KEY: ${{ secrets.BLOGGER_API_KEY }}
-          BLOG_ID: ${{ secrets.BLOG_ID }}        
+        run: yarn build        
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out          
-          cname: zedlen.com          
+          cname: zedlen.com
+          BLOGGER_API_KEY: ${{ secrets.BLOGGER_API_KEY }}
+          BLOG_ID: ${{ secrets.BLOG_ID }}
