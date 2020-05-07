@@ -14,30 +14,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-          
+          node-version: '12.x'      
 
       - run: yarn install
       
       - name: Build
-        run: yarn build        
+        run: yarn build
+        with:
+          BLOGGER_API_KEY: ${{ secrets.BLOGGER_API_KEY }}
+          BLOG_ID: ${{ secrets.BLOG_ID }}        
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out          
-          cname: zedlen.com
-          BLOGGER_API_KEY: ${{ secrets.BLOGGER_API_KEY }}
-          BLOG_ID: ${{ secrets.BLOG_ID }}
+          cname: zedlen.com          
