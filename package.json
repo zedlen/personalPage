@@ -19,6 +19,7 @@
     "unfetch": "^4.1.0"
   },
   "devDependencies": {
-    "dotenv-webpack": "^1.7.0"
+    "dotenv-webpack": "^1.7.0",
+    "execa": "latest"
   }
 }
