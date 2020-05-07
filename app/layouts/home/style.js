@@ -4,7 +4,7 @@ import { breakpoints } from '../../breakpoints'
 export const BannerHolder = styled.div`
     width: 100%;
     height: 400px;
-    background-image: url('/static/images/background.png');
+    background-image: url(${(assetPrefix)=>assetPrefix} + '/static/images/background.png');
     background-repeat: no-repeat;    
     background-position: center;
     background-size: cover;

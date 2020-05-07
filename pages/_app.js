@@ -7,10 +7,10 @@ import { Nav } from '../app/components'
 
 export default class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, __NEXT_DATA__ } = this.props
 
     const navProps = {      
-      logo: "/static/images/logo.png",
+      logo: __NEXT_DATA__.assetPrefix + "/static/images/logo.png",
       brandName: "Zedlen",
       leftItems: [{
         route:"#about",
