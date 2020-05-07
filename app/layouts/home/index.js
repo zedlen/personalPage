@@ -19,7 +19,7 @@ import useSWR from 'swr'
 import Repo from './repo';
 import { ABOUT, TECHS } from '../../constants/sections';
 
-const Home = ({__NEXT_DATA__}) => {
+const Home = () => {
     const { data, error } = useSWR('/users/zedlen/repos', github_fetcher) 
     let repos = <></>   
     if (error) {
@@ -47,7 +47,7 @@ const Home = ({__NEXT_DATA__}) => {
     }
     return(
         <div>
-            <BannerHolder assetPrefix={__NEXT_DATA__.assetPrefix}/> 
+            <BannerHolder /> 
             <Section id={ABOUT.id}>
                 <SectionTitle>{ABOUT.TITLE}</SectionTitle>
                 {ABOUT.info.map( ( item, index ) => 
