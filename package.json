@@ -24,6 +24,6 @@
     "dotenv-webpack": "^1.7.0",
     "execa": "latest",
     "rimraf": "^3.0.0",
-    "gh-pages": "^2.1.1",
+    "gh-pages": "^2.1.1"
   }
 }
