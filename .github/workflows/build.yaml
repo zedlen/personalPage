@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   deploy:
@@ -32,5 +32,8 @@ jobs:
       
       - name: Build
         run: yarn build
+        env: 
+          BLOGGER_API_KEY: ${{ secrets.BLOGGER_API_KEY }}
+          BLOG_ID: ${{ secrets.BLOG_ID }}
 
       
