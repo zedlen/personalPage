@@ -91,9 +91,117 @@ export const AboutText = styled.p`
 
 export const Section = styled.div`
     padding: 5em 1em;
-    background-color: ${({ bg }) => bg ? bg : '#fff' };
+    background-color: ${({ bg }) => bg ? bg : 'transparent' };
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const SectionTitle = styled.h1`
     text-align: center;
+`;
+
+export const TechsHolder = styled.div`    
+    flex-direction: row;    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+`;
+
+export const TechsLogo = styled.img`
+    width: 100%;            
+`;
+
+export const TechHolder = styled.div`
+    position: relative;
+    padding: 15px;    
+    margin: 15px;
+    border-radius: 5px;
+    background: ${ ({ background, color }) =>   background === 'dark' ? '#afafaf' : '#fafafa' };
+    box-shadow: 4px 4px  15px rgba(0,0,0,0.25);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    @media (min-width: 0px) {
+        width: 40%; 
+    }
+    @media ${breakpoints.tablet} {
+        width: 25%; 
+    }
+    @media ${breakpoints.laptop} {
+        width: 19%; 
+    }
+    transition: all 200ms;
+    &:hover{
+        transform: scale(1.1);
+    }      
+`;
+
+export const ContactHolder = styled.div`        
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; 
+    @media (min-width: 0px) {
+        flex-direction: column; 
+    }
+    @media ${breakpoints.laptop} {
+        flex-direction: row; 
+    }
+`;
+
+export const ContactData = styled.div`    
+    flex-direction: row;    
+    flex: 1;
+    align-items: center;
+    justify-content: center;    
+    display: flex;
+    &>img{        
+        @media (min-width: 0px) {
+            height: 100%; 
+        }
+        @media ${breakpoints.laptop} {
+            width: 100%; 
+        }
+    }
+`;
+
+export const ContactForm = styled.div`    
+    flex-direction: column;    
+    flex: 1;
+    align-items: center;
+    justify-content: center;   
+    padding: 1rem;
+    &>form{
+        width: 100%;
+        align-items: center;
+        justify-content: center;  
+        display: flex;
+        flex-direction: column;
+    }     
+`;
+
+export const TextArea = styled.textarea`
+  padding: .5rem .1rem;
+  outline: none;
+  width: ${ ({ width }) => width ? width : '100%' };
+  border-radius: .2rem;
+  border: 1px solid #afafaf;
+  margin: .5rem 0;
+  resize: none;
+  font-size: 1.05rem;
+  height: 5rem;
+`;
+
+export const Button = styled.button`
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primaryContrast};
+    padding: .5rem;
+    border-radius: .2rem;
+    font-size: 1.05rem;
+    width: 40%;
 `;

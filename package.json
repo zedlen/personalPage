@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build && next export",
-    "start": "next start"
+    "start": "next start",
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.js",
+    "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && touch out/CNAME && echo \"zedlen.com\" >> out/CNAME && gh-pages -d out"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -17,5 +19,11 @@
     "styled-components": "^5.0.0",
     "swr": "^0.1.16",
     "unfetch": "^4.1.0"
+  },
+  "devDependencies": {
+    "dotenv-webpack": "^1.7.0",
+    "execa": "latest",
+    "rimraf": "^3.0.0",
+    "gh-pages": "^2.1.1"
   }
 }

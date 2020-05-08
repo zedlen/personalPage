@@ -9,6 +9,7 @@ export const SNav = styled.nav`
     background: ${ ({ theme, backgroundColor }) => backgroundColor ? backgroundColor : theme.colors.primary };    
     height: 40px;
     width: 100%;
+    z-index: 9999;
     position: sticky;
     top: 0;
 `;
