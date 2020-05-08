@@ -142,10 +142,66 @@ export const TechHolder = styled.div`
     }      
 `;
 
-export const ContactHolder = styled.div`    
-    flex-direction: row;    
+export const ContactHolder = styled.div`        
     width: 100%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap; 
+    @media (min-width: 0px) {
+        flex-direction: column; 
+    }
+    @media ${breakpoints.laptop} {
+        flex-direction: row; 
+    }
+`;
+
+export const ContactData = styled.div`    
+    flex-direction: row;    
+    flex: 1;
+    align-items: center;
+    justify-content: center;    
+    display: flex;
+    &>img{        
+        @media (min-width: 0px) {
+            height: 100%; 
+        }
+        @media ${breakpoints.laptop} {
+            width: 100%; 
+        }
+    }
+`;
+
+export const ContactForm = styled.div`    
+    flex-direction: column;    
+    flex: 1;
+    align-items: center;
+    justify-content: center;   
+    padding: 1rem;
+    &>form{
+        width: 100%;
+        align-items: center;
+        justify-content: center;  
+        display: flex;
+        flex-direction: column;
+    }     
+`;
+
+export const TextArea = styled.textarea`
+  padding: .5rem .1rem;
+  outline: none;
+  width: ${ ({ width }) => width ? width : '100%' };
+  border-radius: .2rem;
+  border: 1px solid #afafaf;
+  margin: .5rem 0;
+  resize: none;
+  font-size: 1.05rem;
+  height: 5rem;
+`;
+
+export const Button = styled.button`
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.primaryContrast};
+    padding: .5rem;
+    border-radius: .2rem;
+    font-size: 1.05rem;
+    width: 40%;
 `;
