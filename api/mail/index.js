@@ -4,8 +4,10 @@ module.exports = async (req, res) => {
         var transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: process.env.MAIL_USER,
-                pass: process.env.MAIL_PASS
+                type: "OAuth2",
+                user: process.env.MAIL_USER,                
+                privateKey: process.env.MAIL_PRIVATE,
+                serviceClient: process.env.MAIL_CLIENT,
             }
         })
         console.log(process.env.MAIL_USER)
