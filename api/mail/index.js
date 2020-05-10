@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
         transporter.sendMail(mailOptions, function(error, info){
             if (error){
                 console.log(error);
-                res.send(500, error.message);
+                res.status(500).jsonp(error);
             } else {
                 console.log("Email sent");
                 res.status(200).jsonp(req.body);
