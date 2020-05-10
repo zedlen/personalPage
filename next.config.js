@@ -6,6 +6,9 @@ module.exports = {
     },
     env: {
         BLOGGER_API_KEY: process.env.BLOGGER_API_KEY,
-        BLOG_ID: process.env.BLOG_ID
+        BLOG_ID: process.env.BLOG_ID,
+        SPACE_ID:process.env.SPACE_ID,
+        DELIVERY_TOKEN:process.env.DELIVERY_TOKEN,
+        MANAGEMENT_TOKEN:process.env.MANAGEMENT_TOKEN
     }
 }
