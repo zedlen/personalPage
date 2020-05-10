@@ -8,6 +8,9 @@ module.exports = async (req, res) => {
                 pass: process.env.MAIL_PASS
             }
         })
+        console.log(process.env.MAIL_USER)
+        console.log(process.env.MAIL_PASS)
+        console.log(process.env)
         var mailOptions = {
             from: 'Zedlen Page',
             to: 'luis.melencez@zedlen.com',
@@ -17,7 +20,7 @@ module.exports = async (req, res) => {
         transporter.sendMail(mailOptions, function(error, info){
             if (error){
                 console.log(error);
-                res.send(500, err.message);
+                res.send(500, error.message);
             } else {
                 console.log("Email sent");
                 res.status(200).jsonp(req.body);
