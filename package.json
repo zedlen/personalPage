@@ -13,6 +13,7 @@
     "axios": "^0.19.2",
     "contentful": "^7.14.4",
     "next": "9.3.2",
+    "next-manifest": "^3.0.1",
     "nodemailer": "^6.4.6",
     "prop-types": "^15.7.2",
     "react": "16.12.0",

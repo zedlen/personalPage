@@ -1,6 +1,7 @@
 import Document, { Head, Main, NextScript } from "next/document";
 // Import styled components ServerStyleSheet
 import { ServerStyleSheet } from "styled-components";
+import Manifest from 'next-manifest/manifest'
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -21,13 +22,21 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="es">
         <Head>
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}          
           <link rel="icon" type="image/png" href="/static/images/logo.png" />          
           <meta name="description" content="My personal page, Full Stack Javascript Developer. "/>
           <meta name="keywords" content="web developer, web, developer, fullstack, front, frontend, front-end, back, backend, back-end, databese"/>
+          <Manifest
+            // path for manifest will be deploying
+            href='/static/manifest/manifest.json'
+            // color for `theme-color`
+            themeColor='#171A1E'
+            // scale for `viewport` meta tag
+            initialScale='1'
+          />
         </Head>
         <body >
           <Main />

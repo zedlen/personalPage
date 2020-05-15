@@ -90,9 +90,12 @@ const Contact = () => {
                 </ContactData>
                 <ContactForm>
                     <form onSubmit={sendInfo} id={"contactData"}>
-                        <Input placeholder={"Asunto"} name={"subject"} />
-                        <Input placeholder={"Contacto (mail o telefono)"} name={"contact"} />
-                        <TextArea placeholder={"Mensaje"} name={"message"} />
+                        <label for="subject">Asunto</label>
+                        <Input placeholder={"Asunto"} id="subject" name={"subject"} />
+                        <label for="contact">Medio de contacto</label>
+                        <Input placeholder={"Contacto (mail o telefono)"} id="contact" name={"contact"} />
+                        <label for="message">Mensaje</label>
+                        <TextArea placeholder={"Mensaje"} id="message" name={"message"} />
                         <Button>Enviar</Button>
                     </form>
                 </ContactForm>
