@@ -28,7 +28,11 @@ export default class MyDocument extends Document {
           {this.props.styleTags}          
           <link rel="icon" type="image/png" href="/static/images/logo.png" />          
           <meta name="description" content="My personal page, Full Stack Javascript Developer. "/>
-          <meta name="keywords" content="web developer, web, developer, fullstack, front, frontend, front-end, back, backend, back-end, databese"/>
+          <meta name="keywords" content="web developer, web, developer, fullstack, front, frontend, front-end, back, backend, back-end, databese"/>          
+          <link rel="apple-touch-icon" sizes="120x120" href="/static/images/pwa/apple-icon-120.png" />
+          <link rel="apple-touch-icon" sizes="167x167" href="/static/images/pwa/apple-icon-167.png" />
+          <link rel="apple-touch-icon" sizes="152x152" href="/static/images/pwa/apple-icon-152.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/static/images/pwa/apple-icon-180.png" />
           <Manifest
             // path for manifest will be deploying
             href='/static/manifest/manifest.json'

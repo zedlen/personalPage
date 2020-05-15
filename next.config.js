@@ -1,11 +1,13 @@
 const Dotenv = require("dotenv-webpack");
 const withManifest = require('next-manifest');
+const withOffline = require('next-offline');
 
 const defaults = {
     // next-manifest options
     output: './static/', // The folder where the manifest will be generated.
     // manifest options
     name: 'Zedlen',
+    standalone: "standalone",
     icons: [
         {
             "src": "/static/images/pwa/manifest-icon-192.png",
@@ -20,7 +22,7 @@ const defaults = {
     ]
 }
 
-module.exports = withManifest({ 
+module.exports = withOffline(withManifest({ 
     webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
         config.plugins.push(new Dotenv({ silent: true }));
         return config;
@@ -35,4 +37,4 @@ module.exports = withManifest({
     manifest: {
         ...defaults
     }
-});
+}));
