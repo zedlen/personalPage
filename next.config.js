@@ -7,6 +7,7 @@ const defaults = {
     output: './static/', // The folder where the manifest will be generated.
     // manifest options
     name: 'Zedlen',
+    short_name: 'Zedlen',
     standalone: "standalone",
     icons: [
         {
