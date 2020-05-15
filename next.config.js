@@ -10,12 +10,12 @@ const defaults = {
     standalone: "standalone",
     icons: [
         {
-            "src": "/static/pwa/manifest-icon-192.png",
+            "src": "/static/images/pwa/manifest-icon-192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/static/pwa/manifest-icon-512.png",
+            "src": "/static/images/pwa/manifest-icon-512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
