@@ -1,6 +1,26 @@
 import styled from "styled-components";
 import { breakpoints } from '../../breakpoints'
 
+export const HomaPage = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+`;
+
+export const LoaderHolder = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100%;
+    margin: 2rem 0;
+`;
+
+
 export const BannerHolder = styled.div`
     width: 100%;
     height: 400px;
@@ -95,7 +115,10 @@ export const Section = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    &#contact{
+        width: calc(100% - 2rem);
+    }   
 `;
 
 export const SectionTitle = styled.h1`
