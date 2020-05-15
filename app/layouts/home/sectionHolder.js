@@ -25,7 +25,7 @@ const About = props => {
                 <SectionTitle>{props.title}</SectionTitle>
                 {props.items.map( ( item, index ) => 
                     <AboutItem key={'about'+index} position={index % 2 == 0 ? 'left' : 'rigth' }>
-                        <AboutImage image={item.image}/>                
+                        <AboutImage image={item.image} alt={item.title}/>                
                         <AboutTextHolder>
                             <AboutTitle>
                                 {item.title}
@@ -86,7 +86,7 @@ const Contact = () => {
         <Section bg='rgba(125,125,125,0.2)' id={'contact'}>
             <ContactHolder>
                 <ContactData>
-                    <img src={'/static/images/data.png'}/>
+                    <img src={'/static/images/data.png'} alt={'contact'}/>
                 </ContactData>
                 <ContactForm>
                     <form onSubmit={sendInfo} id={"contactData"}>

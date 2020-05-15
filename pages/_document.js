@@ -26,6 +26,8 @@ export default class MyDocument extends Document {
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}          
           <link rel="icon" type="image/png" href="/static/images/logo.png" />          
+          <meta name="description" content="My personal page, Full Stack Javascript Developer. "/>
+          <meta name="keywords" content="web developer, web, developer, fullstack, front, frontend, front-end, back, backend, back-end, databese"/>
         </Head>
         <body >
           <Main />
