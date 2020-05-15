@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="180x180" href="/static/images/pwa/apple-icon-180.png" />
           <Manifest
             // path for manifest will be deploying
-            href='/static/manifest/manifest.json'
+            href='/static/manifest.json'
             // color for `theme-color`
             themeColor='#171A1E'
             // scale for `viewport` meta tag
