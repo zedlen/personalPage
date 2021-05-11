@@ -10,7 +10,7 @@
     "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && touch out/CNAME && echo \"zedlen.com\" >> out/CNAME && gh-pages -d out"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "contentful": "^7.14.4",
     "next": "9.3.2",
     "next-manifest": "^3.0.1",
